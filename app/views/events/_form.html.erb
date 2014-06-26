@@ -1,0 +1,24 @@
+<%= form_for(@event, :html => { :multipart => true }) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class = "form-group" >
+  <%= simple_form_for @event do |f| %>
+      <%= f.input :name, input_html: { class: 'form-control' } %>
+      <%= f.input :description, input_html: { class: 'form-control' } %>
+      <%= f.input :zip_code, input_html: { class: 'form-control' } %>
+      <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+
+</div>
+
+<% end %>
