@@ -1,4 +1,4 @@
-<h2>Volunteer Sign up</h2>
+<h2>Organization Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -26,5 +26,4 @@
   <div><%= f.submit "Sign up", class: "btn btn-primary" %></div>
 <% end %>
 
-<%= render "devise/shared/links" %>
-
+<%= render "organizations/shared/links" %>
