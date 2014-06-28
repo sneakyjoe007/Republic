@@ -26,7 +26,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
 
-    @event.org_id = current_organization.id
+    @event.organization_id = current_organization.id
     
     respond_to do |format|
       if @event.save

@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  resources :volunteers
+
   devise_for :organizations
   devise_for :users
-  resources :events
+
+  resources :events do
+    resources :volunteers, only: [:new, :create]
+  end
+
+
+  
 
   get 'pages/about'
 
