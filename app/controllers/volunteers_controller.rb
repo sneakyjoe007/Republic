@@ -18,6 +18,12 @@ class VolunteersController < ApplicationController
 	  	@volunteer.event_id = @event.id
 	  	@volunteer.user_id = current_user.id
 
+	  	@event.volunteers_current = @event.volunteers.count + 1
+	    @event.volunteers_percentage = @event.volunteers_current.to_d / @event.volunteers_needed * 100
+
+	    @event.update(:volunteers_current => @event.volunteers_current, :volunteers_percentage => @event.volunteers_percentage)
+
+
 	  	respond_to do |format|
 	      if @volunteer.save
 	        format.html { redirect_to root_url, notice: 'Joined Successfully' }

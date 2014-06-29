@@ -11,6 +11,8 @@
 		  <h4>Organization: <%= @event.organization.name %></h4>
 		  <h5><%= @event.description %></h5>
 		  <p><%= @event.zip_code %></p>
+		  <p>Volunteers Needed: <%= @event.volunteers_needed %></p>
+		  <p>Current Volunteers = <%= number_to_percentage(@event.volunteers_percentage, precision: 0) %></p>
 		  <div class="center">
 		  	<%= button_to "Join Event", {action: "create", controller: "volunteers", event_id: @event.id}, class: "btn btn-primary", data: { no_turbolink: true} %>
 		  </div>
