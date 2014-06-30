@@ -1,6 +1,7 @@
 class VolunteersController < ApplicationController
 	before_action :set_volunteer, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!
+	before_action :record_volunteer_signup
 
 	def index
 		@volunteers = Volunteer.all.order("created_at DESC")
@@ -40,5 +41,16 @@ class VolunteersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_volunteer
       @volunteer = Volunteer.find(params[:id])
+    end
+
+    def record_volunteer_signup
+      @event = Event.find(params[:event_id])
+
+      @event.volunteers.each do |event|
+      	if event.user_id == current_user.id
+      		flash[:alert] = "Already Joined Event"
+      		redirect_to event_url(params[:event_id])
+      	end
+      end
     end
 end

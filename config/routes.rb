@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   
 
   get 'pages/about'
-
   get 'pages/contact'
+  get 'event' => "events#show"
 
   root 'events#index'
 
