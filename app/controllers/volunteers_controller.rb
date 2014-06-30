@@ -1,7 +1,7 @@
 class VolunteersController < ApplicationController
 	before_action :set_volunteer, only: [:show, :edit, :update, :destroy]
 	before_action :authenticate_user!
-	before_action :record_volunteer_signup
+	before_action :record_volunteer_signup, only: [:create, :update]
 
 	def index
 		@volunteers = Volunteer.all.order("created_at DESC")
