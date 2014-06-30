@@ -31,6 +31,8 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     @event.organization_id = current_organization.id
+    @event.volunteers_current = 0
+    @event.volunteers_percentage = 0
     
     respond_to do |format|
       if @event.save

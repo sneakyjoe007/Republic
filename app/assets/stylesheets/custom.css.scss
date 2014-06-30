@@ -37,3 +37,14 @@ body {
 	h5 {font-size: 25px;}
 	p {font-size: 18px;}
 }
+
+.progress-bar {
+	min-width: 40px;
+}
+
+.progress-bar[aria-valuenow="0.0"] {
+	min-width: 50px;
+	color: $text-color;
+	background: transparent;
+  	box-shadow: none;
+}

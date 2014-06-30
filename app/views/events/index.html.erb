@@ -2,7 +2,7 @@
 
 <% if organization_signed_in? %>
 
-<%= button_to 'New Event', new_event_path, class: "btn btn-primary" %>
+<%= link_to 'New Event', new_event_path, class: "btn btn-primary" %>
 
 <% end %>
 
@@ -19,7 +19,7 @@
             <p>By: <%= event.organization.name %></p>
             <div class="progress">
               <div class="progress-bar" role="progressbar" aria-valuenow="<%= event.volunteers_percentage %>" aria-valuemin="0" aria-valuemax="100" style= "width: <%= number_to_percentage(event.volunteers_percentage) %>" >
-                  <%= event.volunteers_current %> / <%= event.volunteers_needed %>
+                <%= event.volunteers_current %> / <%= event.volunteers_needed %>
               </div>
             </div>
 
