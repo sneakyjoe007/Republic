@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/contact'
   get 'event' => "events#show"
+  get 'organizations/profile' => "organizations#profile"
 
   root 'events#index'
 
