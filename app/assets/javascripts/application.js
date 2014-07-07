@@ -15,3 +15,9 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+$('#sidebar').affix({
+      offset: {
+        top: 245
+      }
+});

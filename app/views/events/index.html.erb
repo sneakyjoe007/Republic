@@ -1,9 +1,11 @@
+<div class="heading">
 <h1>Volunteer Events</h1>
+</div>
 
 <% if organization_signed_in? %>
-
+<div class="event-button">
 <%= link_to 'New Event', new_event_path, class: "btn btn-primary" %>
-
+</div>
 <% end %>
 
 <br>
