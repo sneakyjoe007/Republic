@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-  resources :volunteers
-
   devise_for :organizations
   devise_for :users
+
+  resources :volunteers
+
 
   resources :events do
     resources :volunteers, only: [:new, :create]
   end
-
-
   
 
   get 'pages/about'
@@ -16,6 +15,10 @@ Rails.application.routes.draw do
   get 'event' => "events#show"
   get 'organizations/profile' => "organizations#profile"
   get 'profile' => "users#profile"
+
+  scope "/admin" do
+    get 'dashboard' => 'admin#index', :as => :admin_dashboard
+  end
 
   root 'events#index'
 

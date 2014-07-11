@@ -17,7 +17,7 @@
         <div class="thumbnail">
           <%= link_to image_tag("default.jpeg"), event %>
           <div class="caption">
-            <h3><%= event.name %></h3>
+            <h3><%= link_to event.name, event %></h3>
             <p>By: <%= event.organization.name %></p>
             <div class="progress">
               <div class="progress-bar" role="progressbar" aria-valuenow="<%= event.volunteers_percentage %>" aria-valuemin="0" aria-valuemax="100" style= "width: <%= number_to_percentage(event.volunteers_percentage) %>" >

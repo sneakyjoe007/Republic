@@ -12,6 +12,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'simple_form'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'pundit'
+gem 'rolify'
 
 group :production do
 	gem 'pg'

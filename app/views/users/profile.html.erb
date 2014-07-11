@@ -3,17 +3,21 @@
 <h2> Profile Page </h2>
 <h3><%= current_user.name %></h3>
 
+<% if current_user.has_role? :admin %>
+	<p>Hello Admin<p>
+<% end %>
+
 <div class="row">
 	<div class="col-md-4">
 		<div class="thumbnail">
-			<%= image_tag "default.jpeg" %>
+			<%= image_tag "profile.gif" %>
 		</div>
 	</div>
 	<div class="col-md-6">
 		  <p> This is a placeholder for Profile Stuff </p>
 	</div>
 </div>
-
+<strong> Events Registered For: </strong>
 <table class="table table-striped table-bordered">
 	<tr>
 		<th class="center">Event Name</th>

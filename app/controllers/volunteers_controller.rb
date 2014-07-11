@@ -49,8 +49,7 @@ class VolunteersController < ApplicationController
       @event.volunteers.each do |event|
       	if event.user_id == current_user.id
       		flash[:alert] = "Already Joined Event"
-      		redirect_to event_url(params[:event_id])
-      		return
+      		redirect_to event_url(params[:event_id]) and return
       	end
       end
     end
