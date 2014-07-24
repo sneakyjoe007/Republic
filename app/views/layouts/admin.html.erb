@@ -3,7 +3,6 @@
 <head>
   <title>Republic</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -20,13 +19,25 @@
 			</div>
 		<% end %>
 	<% end %>
+	
+	<div class="row">
 
-	<%= yield %>
+	<div >
+		<%= render 'admin/sidebar' %>
+	</div>
 
-	<%= render 'layouts/footer' %>
+	<div class="col-md-10" id="admin-body">
+		<%= yield %>
+	</div>
+
+</div>
+	
 </div>
 
 	   
 
 </body>
 </html>
+
+
+

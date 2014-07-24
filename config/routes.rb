@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'event' => "events#show"
   get 'organizations/profile' => "organizations#profile"
   get 'profile' => "users#profile"
+  get 'admin' => 'admin#index', :as => :admin
 
   scope "/admin" do
     get 'dashboard' => 'admin#index', :as => :admin_dashboard

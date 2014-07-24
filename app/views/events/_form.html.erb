@@ -1,3 +1,5 @@
+
+
 <%= form_for(@event, :html => { :multipart => true }) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
@@ -15,10 +17,20 @@
   <%= simple_form_for @event do |f| %>
       <%= f.input :name, input_html: { class: 'form-control' } %>
       <%= f.input :description, input_html: { class: 'form-control' } %>
-      <%= f.input :volunteers_needed, input_html: { class: 'form-control'} %>
+      <%= f.input :volunteers_needed, input_html: { class: 'form-control'} %> <br>
+
+      
+      <%= f.input :event_date, as: :string, label: 'Date', input_html: { id: "begin-date", class: 'form-control', placeholder: Date.today.strftime("%m/%d/%Y") } %>
+
+
+      <%= f.input :event_time, as: :string, input_html: { id: "timepicker", class: 'form-control' } %>
+
+
+
       <%= f.input :zip_code, input_html: { class: 'form-control' } %> <br>
       <%= f.submit class: "btn btn-primary" %>
   <% end %>
+
 
 </div>
 

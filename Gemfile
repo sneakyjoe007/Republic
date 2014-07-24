@@ -14,6 +14,10 @@ gem 'simple_form'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'pundit'
 gem 'rolify'
+gem 'bootstrap-datepicker-rails'
+gem 'momentjs-rails', '~> 2.5.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 3.0.0'
+gem 'jquery-turbolinks'
 
 group :production do
 	gem 'pg'

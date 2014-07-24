@@ -1,1 +1,29 @@
-<p> hello </p>
+<table class="table table-striped table-bordered">
+	<tr>
+		<th class="center">User Name</th>
+		<th class="center">Events</th>
+	</tr>
+
+	<% @users.each do |user| %>
+	 <tr>
+	 	<td class="center"><%= user.name %> </td>
+	 	<td class="center"><%= user.volunteers.count %> </td>
+	 </tr>
+	<% end %>
+</table>
+
+<br>
+
+<table class="table table-striped table-bordered">
+	<tr>
+		<th class="center">Event Name</th>
+		<th class="center">Users Registered</th>
+	</tr>
+
+	<% @events.each do |event| %>
+	 <tr>
+	 	<td class="center"><%= link_to event.name, event %> </td>
+	 	<td class="center"><%= event.volunteers_current %></td>
+	 </tr>
+	<% end %>
+</table>

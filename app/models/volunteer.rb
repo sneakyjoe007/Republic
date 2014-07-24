@@ -1,5 +1,5 @@
 class Volunteer < ActiveRecord::Base
 	resourcify
 	belongs_to :user
-	belongs_to :event, dependent: :destroy
+	belongs_to :event
 end
