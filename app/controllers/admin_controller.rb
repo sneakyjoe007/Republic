@@ -8,7 +8,7 @@ class AdminController < BaseController
   def index
   	
   	@users = User.all
-  	@events = Event.all
+  	@events = Event.all.order("event_date ASC")
   end
 
 end
