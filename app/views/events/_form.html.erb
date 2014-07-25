@@ -23,7 +23,7 @@
       <%= f.input :event_date, as: :string, label: 'Date', input_html: { id: "begin-date", class: 'form-control', placeholder: Date.today.strftime("%m/%d/%Y") } %>
 
 
-      <%= f.input :event_time, as: :string, input_html: { id: "timepicker", class: 'form-control' } %>
+      <%= f.input :event_time, as: :string, input_html: { id: "timepicker", class: 'form-control', value: @event.event_time.blank? ? " " : @event.event_time.strftime("%l:%M %p") } %>
 
 
 
