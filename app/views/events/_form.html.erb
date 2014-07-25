@@ -26,7 +26,6 @@
       <%= f.input :event_time, as: :string, input_html: { id: "timepicker", class: 'form-control', value: @event.event_time.blank? ? " " : @event.event_time.strftime("%l:%M %p") } %>
 
 
-
       <%= f.input :zip_code, input_html: { class: 'form-control' } %> <br>
       <%= f.submit class: "btn btn-primary" %>
   <% end %>
