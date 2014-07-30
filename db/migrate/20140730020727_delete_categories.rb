@@ -1,5 +1,5 @@
 class DeleteCategories < ActiveRecord::Migration
   def up
-  	drop_table :Category
+  	drop_table :categories
   end
 end
