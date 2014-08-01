@@ -10,6 +10,7 @@
 		  <h3><%= @event.name %></h3>
 		  <h4>Organization: <%= @event.organization.name %></h4>
 		  <h5><%= @event.description %></h5>
+		  <p>Category: <%= @event.category.name.titleize %></p>
 		  <p>Event Date: <%= @event.event_date.strftime("%e %b %Y") %></p>
 		  <p>Event Time: <%= @event.event_time.strftime("%l:%M %p") %></p>
 		  <p><%= @event.zip_code %></p>

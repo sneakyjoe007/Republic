@@ -11,4 +11,9 @@ class AdminController < BaseController
   	@events = Event.all.order("event_date ASC")
   end
 
+  def categories
+  	@categories = Category.all.order("name ASC")
+  end
+
+
 end

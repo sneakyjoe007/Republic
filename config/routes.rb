@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   scope "/admin" do
     get 'dashboard' => 'admin#index', :as => :admin_dashboard
+    get 'categories' => 'admin#categories'
   end
 
   root 'events#index'
