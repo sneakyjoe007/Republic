@@ -1,0 +1,25 @@
+<ul class="nav nav-pills nav-stacked right" id="sidebar">
+	<div class="form-group">
+		<div class="col-sm-10">
+
+				<li> Search </li>
+				<div id="search">
+				    <%= form_tag(events_path, :method => "get", id: "search-form") do %>
+				    <%= search_field_tag :search, params[:search], placeholder: "Search Events" %>
+				    <br>
+				    <%= submit_tag "Search", :name => nil, input_html: { class: 'right'} %>
+				    <div class="left">
+				    <% @categories.each do |category| %>
+				    	<li>
+				    		<%= check_box_tag 'category_id[]', category.id %>
+				    		<%= h category.name %>
+				    	</li>
+				    <% end %>
+					</div>
+
+				    <% end %>
+
+				</div>
+		</div>
+	</div>
+</ul>
