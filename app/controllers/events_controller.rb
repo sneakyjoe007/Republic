@@ -5,7 +5,9 @@ class EventsController < ApplicationController
   # GET /events.json
   def index  
 
-    @categories = Category.all
+    @categories = Category.all.order("name ASC")
+    @events = Event.where("category_id LIKE ? or name LIKE ?", params[:category_id], "%#{params[:search]}%").order("event_date ASC")
+
 
     if params[:search].present?
       #@events = Event.where(nil) #creates an anonymous scope

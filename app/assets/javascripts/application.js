@@ -20,8 +20,13 @@
 //= require bootstrap-datetimepicker
 //= require_tree .
 
-$('#sidebar').affix({
-      offset: {
-        top: 245
-      }
+$(function () {
+	$("#search-form input").keyup(function() {
+		$.get($("#search-form").attr("action"), $("#search-form").serialize(), null, "script");
+		return false;
+	});
+	$("[type=checkbox]").change(function() {
+        $.get($("#search-form").attr("action"), $("#search-form").serialize(), null, "script");
+        return false
+    });
 });
