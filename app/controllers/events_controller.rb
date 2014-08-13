@@ -8,18 +8,6 @@ class EventsController < ApplicationController
     @categories = Category.all.order("name ASC")
     @events = Event.where("category_id = ? or name LIKE ?", params[:category_id], "%#{params[:search]}%").order("event_date ASC")
 
-
-    if params[:search].present?
-      #@events = Event.where(nil) #creates an anonymous scope
-      #@events = @events.category(params[:category_id]) if params[:category_id].present?
-      #@events = @events.search(params[:search]) if params[:search].present?
-      #@events = Event.where(category_id: params[:category_id] and "name LIKE ?", "%#{params[search]}%").order("event_date ASC")
-      @events = Event.where("category_id LIKE ? or name LIKE ?", params[:category_id], "%#{params[:search]}%").order("event_date ASC")
-    elsif params[:category_id].present?
-      @events = Event.where(category_id: params[:category_id]).order("event_date ASC")
-    else
-      @events = Event.all.order("event_date ASC")
-    end 
   end
 
   # GET /events/1
