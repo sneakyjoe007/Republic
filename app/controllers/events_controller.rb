@@ -6,7 +6,7 @@ class EventsController < ApplicationController
   def index  
 
     @categories = Category.all.order("name ASC")
-    @events = Event.where("CAST (category_id AS INTEGER) LIKE ? or CAST (name AS STRING) LIKE ?", params[:category_id], "%#{params[:search]}%").order("event_date ASC")
+    @events = Event.where("category_id LIKE ? or name LIKE ?", params[:category_id], "%#{params[:search]}%").order("event_date ASC")
 
 
     if params[:search].present?
