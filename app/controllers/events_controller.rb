@@ -7,8 +7,8 @@ class EventsController < ApplicationController
 
     @categories = Category.all.order("name ASC")
 
-    if params[:search].nil? && params[:category_id].present?
-      @events = Event.where(category_id: params[:category_id]).order("event_date ASC")
+    if params[:search].blank? && params[:category_id].present?
+      @events = Event.where("category_id = ?", params[:category_id]).order("event_date ASC")
     elsif params[:search].present? && params[:category_id].present?
       @events = Event.where("category_id = ? AND LOWER(name) LIKE LOWER(?)", params[:category_id], "%#{params[:search]}%").order("event_date ASC")
     elsif params[:search].present?
