@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  resources :categories
+  resources :event_images
+
   devise_for :organizations
   devise_for :users
 

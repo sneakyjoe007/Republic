@@ -2,6 +2,7 @@ class Event < ActiveRecord::Base
 	resourcify
 	belongs_to :organization
 	belongs_to :category
+	belongs_to :event_image
 	has_many :volunteers, foreign_key: "event_id", dependent: :destroy
 
 	validates :event_date, presence: true

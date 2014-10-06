@@ -8,6 +8,20 @@ body {
 	width: 100%;
 }
 
+html {
+  position: relative;
+  height: 100%;
+}
+
+.container {
+	min-height: 100%;
+}
+
+.footer {
+	background-color: #EFEFEB;
+	max-width: 100%;
+}
+
 .navbar-default {
 	background-color: #EFEFEB;
 }
@@ -71,13 +85,14 @@ body {
 	border-bottom: solid 1px #CCC;
 }
 
-.nav-stacked {
+#sidebar {
 	position: absolute;
-	left: 10px;
-	height: 100%;
+	left: 0px;
+	min-height: 100%;
 	width: 180px;
 	top: 50px;
 	background-color: #EFEFEB;
+
 }
 
 #admin-body {
@@ -88,8 +103,9 @@ body {
 	padding-left: 180px;
 }
 
-.search-bar {
-	max-width: 90%;
+#search {
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .search-categories {
@@ -97,5 +113,9 @@ body {
 	font-family: guardian-egyptt, georgia, serif;
 	font-size: 15px;
 	font-weight: 500;
-	padding-left: 20px
+	padding-left: 20px;
+}
+
+.alert {
+	margin-left: 190px;
 }

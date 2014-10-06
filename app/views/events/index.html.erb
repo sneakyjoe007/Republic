@@ -13,10 +13,13 @@
   <%= render 'sidebar' %>
   
   <div id="events">
-    
+
     <div class="center">
     <div class="row">
       <% @events.each do |event| %>
+      <% if @events.each.nil? %>
+        <h3> No Events </h3>
+      <% else %>
         <div class="col-md-3">
           <div class="thumbnail">
             <%= link_to image_tag("default.jpeg"), event %>
@@ -33,8 +36,8 @@
 
             </div>
           </div>
-
         </div>
+        <% end %>
       <% end %>
     </div>
   </div>
