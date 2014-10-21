@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require maskedinput
 //= require bootstrap
 //= require turbolinks
 //= require moment
@@ -25,8 +26,24 @@ $(function () {
 		$.get($("#search-form").attr("action"), $("#search-form").serialize(), null, "script");
 		return false;
 	});
+
 	$("[type=checkbox]").change(function() {
         $.get($("#search-form").attr("action"), $("#search-form").serialize(), null, "script");
         return false
     });
+
+    $('#image_select').change(function () {
+    	$.get($("#image_select").attr("action"), $("#image_select").serialize(), null, "script");
+		return false;
+	});
+
+	$("#EIN").change(function() {
+    	$(this).addClass("has-success has-feedback");
+    	//$("#success").addClass("glyphicon glyphicon-ok form-control-feedback");
+    	var str = $("#TIN").val();
+ 		$.ajax({
+ 			url: "guideStar",
+ 			data: {'EIN': str}
+ 		});
+ 	});
 });

@@ -6,6 +6,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
+gem 'figaro', '~> 1.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
@@ -20,6 +21,9 @@ gem 'momentjs-rails', '~> 2.5.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 3.0.0'
 gem 'jquery-turbolinks'
 gem 'js-routes'
+gem 'maskedinput-rails'
+gem 'guidestar-ruby'
+
 
 group :production do
 	gem 'pg'

@@ -13,6 +13,9 @@ Rails.application.routes.draw do
     resources :volunteers, only: [:new, :create]
   end
   
+  resources :organizations do
+   get :guideStar, on: :collection
+  end
 
   get 'pages/about'
   get 'pages/contact'
@@ -25,6 +28,8 @@ Rails.application.routes.draw do
     get 'dashboard' => 'admin#index', :as => :admin_dashboard
     get 'categories' => 'admin#categories'
   end
+
+
 
   root 'events#index'
 

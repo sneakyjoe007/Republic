@@ -8,6 +8,20 @@
     <%= f.text_field :name, autofocus: true, class: "form-control" %>
   </div>
 
+  <div class="form-group" id="EIN">
+    <%= f.label :EIN, "EIN Number" %>
+    <%= f.text_field :EIN, autofocus: true, id: "TIN", class: "form-control" %>
+    <span id="success"></span>
+  </div>
+
+  <div class="form-group" id="EINbutton">
+    <%= f.label :EIN2, "EIN Number" %>
+    <%= f.text_field :EIN, autofocus: true, id: "EINText", class: "form-control" %>
+    <span id="success"></span>
+  </div>
+
+  <div id="Status"></div>
+
   <div class="form-group">
     <%= f.label :email %>
     <%= f.email_field :email, class: "form-control" %>

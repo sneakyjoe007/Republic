@@ -6,4 +6,5 @@ class Category < ActiveRecord::Base
 	validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 	has_many :events, foreign_key: "category_id"
+	has_many :event_images
 end
