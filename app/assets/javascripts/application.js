@@ -39,11 +39,11 @@ $(function () {
 
 	$("#EIN").change(function() {
     	$(this).addClass("has-success has-feedback");
-    	//$("#success").addClass("glyphicon glyphicon-ok form-control-feedback");
+    	$("#success").addClass("glyphicon glyphicon-ok form-control-feedback");
     	var str = $("#TIN").val();
- 		$.ajax({
- 			url: "guideStar",
- 			data: {'EIN': str}
- 		});
+ 		//$.ajax({
+ 		//	url: "guideStar",
+ 		//	data: {'EIN': str}
+ 		//});
  	});
 });

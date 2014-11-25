@@ -9,9 +9,9 @@ gem 'devise'
 gem 'figaro', '~> 1.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
+gem 'simple_form'
 gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass', '~> 3.1.1'
-gem 'simple_form'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem "paperclip-dropbox", ">= 1.1.7"
 gem 'pundit'

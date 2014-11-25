@@ -6,6 +6,7 @@ class EventsController < ApplicationController
   def index  
 
     @categories = Category.all.order("name ASC")
+    @events_today = Event.where('event_date =?', Date.today)
 
     if params[:search].blank? && params[:category_id].present?
       @events = Event.where("category_id = ?", params[:category_id]).order("event_date ASC")

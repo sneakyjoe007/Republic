@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141012231733) do
+ActiveRecord::Schema.define(version: 20141110011720) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 20141012231733) do
     t.integer  "volunteers_needed"
     t.integer  "volunteers_current"
     t.decimal  "volunteers_percentage", precision: 4, scale: 1
-    t.integer  "category_id"
     t.integer  "image_id"
+    t.integer  "category_id"
   end
 
   create_table "organizations", force: true do |t|

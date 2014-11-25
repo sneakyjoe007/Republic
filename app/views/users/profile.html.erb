@@ -1,36 +1,78 @@
 <p id="notice"><%= notice %></p>
 
 <h2> Profile Page </h2>
-<h3><%= current_user.name %></h3>
-
-<% if current_user.has_role? :admin %>
-	<p>Hello Admin<p>
-<% end %>
-
-<p> Want to become admin? </p>
-
 
 <div class="row">
-	<div class="col-md-4">
-		<div class="thumbnail">
-			<%= image_tag "profile.gif" %>
+	<div class="col-md-2">
+		<div class="profile-image">
+		<%= image_tag "profile.gif" %>
+		</div>
+		<div class="profile-name">
+		<%= current_user.name.upcase %>
 		</div>
 	</div>
-	<div class="col-md-6">
-		  <p> This is a placeholder for Profile Stuff </p>
+	<div class="col-md-1">
+		<strong>RANK</strong>
+	</div>
+	<div class="col-md-9">
+		<strong>BADGES EARNED</strong>
+		<table>
+			<% @categories.each_slice(9) do |row| %>
+			<tr>
+				<% row.each do |category| %>
+				<td><div class="profile-category"><%= image_tag category.image.url(:thumb) %></div></td>
+				<% end %>
+			</tr>
+			<% end %>
+		</table>
 	</div>
 </div>
-<strong> Events Registered For: </strong>
-<table class="table table-striped table-bordered">
-	<tr>
-		<th class="center">Event Name</th>
-		<th class="center">Users Registered</th>
-	</tr>
 
-	<% @volunteers.each do |volunteer| %>
-	 <tr>
-	 	<td class="center"><%= link_to volunteer.event.name, volunteer.event %> </td>
-	 	<td class="center"><%= volunteer.event.volunteers_current %></td>
-	 </tr>
-	<% end %>
-</table>
+<div class="line">
+	<div class="center">
+		<strong>NEWS FEED</strong>
+		<span>
+		<%= link_to 'PERSONAL', profile_path %>
+		<%= link_to 'CORPORATE', profile_path %>
+		<%= link_to 'FRIENDS', profile_path %>
+		<%= link_to 'ALL', profile_path %>
+		</span>
+	</div>
+</div>
+<br>
+
+<div class="row">
+	<div class="col-md-3">
+		Calendar
+	</div>
+
+	<div class="col-md-9">
+
+		<% @events.each do |event| %>
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="col-md-1">
+					<h4 class="profile-date">
+						<p><%= event.event_date.strftime("%^b") %></p>
+						<p><%= event.event_date.strftime("%d") %></p>
+					</h4>
+				</div>
+				<div class="col-md-8">
+					<div class="profile-event-header">
+						<%= event.category.name %>
+						<span><%= link_to 'Enlist', profile_path %></span>
+						<span><%= link_to 'Recruit', profile_path %></span>
+					</div>
+					<p><%= truncate(event.description, :length => 180) %></p>
+				</div>
+
+				
+				
+			</div>
+		</div>
+		
+
+		<% end %>
+	</div>
+</div>

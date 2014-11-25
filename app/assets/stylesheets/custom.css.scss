@@ -23,13 +23,13 @@ html {
 }
 
 .navbar-default {
-	background-color: #EFEFEB;
+	background-color: #ce1614;
 }
 
 .navbar-default .navbar-brand {
 	font-family: guardian-egyptt, georgia, serif;
 	font-weight: 400;
-	color: #d5641c;
+	color: #FFFFFF;
 	font-size: 30px;
 }
 
@@ -37,7 +37,7 @@ html {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 14px;
 	font-weight: bold;
-	color: #0192B5;
+	color: #FFFFFF;
 }
 
 .center {
@@ -52,6 +52,22 @@ html {
 	text-align: left;
 }
 
+a:link {
+	color: black;
+}
+
+a:visited {
+	color: black;
+}
+
+a:hover {
+	color: #ce1614;
+}
+
+a:active {
+	color: #ce1614;
+}
+
 .col-md-3:nth-child(4n+1) {
 	clear: left;
 }
@@ -64,6 +80,10 @@ html {
 
 .checkbox-inline {
 	display: inline;
+}
+
+.progress {
+
 }
 
 .progress-bar {
@@ -118,4 +138,92 @@ html {
 
 .alert {
 	margin-left: 190px;
+}
+
+.line {
+	position: relative;
+	border-bottom: 1px solid black;
+	max-width: 100%
+}
+
+.line .center > strong {
+	font-size: 20px;
+}
+
+.line .center > span {
+	font-size: 14px;
+	font-weight: bold;
+	word-spacing: 40px;
+	padding-left: 40px;
+}
+
+.profile-image {
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+}
+
+.profile-name {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: black;
+	background-clip: content-box;
+	text-align: center;
+	padding-top: 4px;
+}
+
+.profile-category {
+	opacity: 0.4;
+	transform: scale(.5,.5);
+	border-spacing: 1px;
+}
+
+.profile-events {
+	min-width: 100%;
+	padding-left: 20px;
+}
+
+.profile-event {
+	border-style: solid;
+	border-width: thin;
+	padding-bottom: 20px;
+}
+
+.profile-date {
+	display:block;
+	background-color: black;
+	border-radius: 5px;
+	text-align: center;
+	color: white;
+	height: 55px;
+	width: 55px;
+	top: 10px;
+}
+
+.profile-date > p {
+	font-weight: bold;
+}
+
+.profile-event-header {
+	padding-top: 10px;
+}
+
+.profile-event-header > span {
+	background-color: #ce1614;
+	padding: 3px 3px 3px 3px;
+}
+
+
+.profile-event-header > span > a:hover {
+	color: #F5F5F1;
+}
+
+.profile-event-header > span > a:link {
+	color: #F5F5F1;
+}
+
+.profile-event-header > span > a:visited {
+	color: #F5F5F1;
 }

@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
 	def profile
 		@volunteers = Volunteer.all.where(user_id: current_user.id).order("created_at ASC")
+		@categories = Category.all
+		@events = Event.all
 	end
 
 end

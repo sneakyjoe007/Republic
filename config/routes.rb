@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :events do
     resources :volunteers, only: [:new, :create]
   end
+
+  get 'organizations/profile' => "organizations#profile" 
   
   resources :organizations do
    get :guideStar, on: :collection
@@ -20,7 +22,7 @@ Rails.application.routes.draw do
   get 'pages/about'
   get 'pages/contact'
   get 'event' => "events#show"
-  get 'organizations/profile' => "organizations#profile"
+
   get 'profile' => "users#profile"
   get 'admin' => 'admin#index', :as => :admin
 
