@@ -140,17 +140,22 @@ a:active {
 	margin-left: 190px;
 }
 
+.double-size {
+	transform: scale(1.7,1.3);
+}
+
 .line {
 	position: relative;
 	border-bottom: 1px solid black;
-	max-width: 100%
+	max-width: 95%;
+	text-indent: 100px;
 }
 
-.line .center > strong {
+.line > strong {
 	font-size: 20px;
 }
 
-.line .center > span {
+.line > span {
 	font-size: 14px;
 	font-weight: bold;
 	word-spacing: 40px;
@@ -176,8 +181,10 @@ a:active {
 
 .profile-category {
 	opacity: 0.4;
-	transform: scale(.5,.5);
+	transform: scale(.7,.7);
 	border-spacing: 1px;
+	width: 90px;
+	height: 60px;
 }
 
 .profile-events {

@@ -1,18 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h2> Profile Page </h2>
-
 <div class="row">
 	<div class="col-md-2">
 		<div class="profile-image">
 		<%= image_tag "profile.gif" %>
 		</div>
-		<div class="profile-name">
-		<%= current_user.name.upcase %>
-		</div>
+		
 	</div>
 	<div class="col-md-1">
 		<strong>RANK</strong>
+		<br>
+		<br>
+		<br>
+		<div class="double-size"><%= image_tag "rank.png" %></div>
 	</div>
 	<div class="col-md-9">
 		<strong>BADGES EARNED</strong>
@@ -28,25 +28,34 @@
 	</div>
 </div>
 
-<div class="line">
-	<div class="center">
-		<strong>NEWS FEED</strong>
-		<span>
-		<%= link_to 'PERSONAL', profile_path %>
-		<%= link_to 'CORPORATE', profile_path %>
-		<%= link_to 'FRIENDS', profile_path %>
-		<%= link_to 'ALL', profile_path %>
-		</span>
+<br>
+
+<div class="row">
+	<div class="col-md-2">
+		<div class="profile-name">
+			<%= current_user.name.upcase %>
+		</div>
+	</div>
+	<div class="col-md-10">
+		<div class="line">
+			<strong>NEWS FEED</strong>
+			<span>
+			<%= link_to 'PERSONAL', profile_path %>
+			<%= link_to 'CORPORATE', profile_path %>
+			<%= link_to 'FRIENDS', profile_path %>
+			<%= link_to 'ALL', profile_path %>
+			</span>
+		</div>
 	</div>
 </div>
 <br>
 
 <div class="row">
-	<div class="col-md-3">
-		Calendar
+	<div class="col-md-2">
+		<%= image_tag "calendar.gif" %>
 	</div>
 
-	<div class="col-md-9">
+	<div class="col-md-10">
 
 		<% @events.each do |event| %>
 
@@ -54,6 +63,7 @@
 			<div class="panel-body">
 				<div class="col-md-1">
 					<h4 class="profile-date">
+						<p><%= event.event_date.strftime("%a") %></p>
 						<p><%= event.event_date.strftime("%^b") %></p>
 						<p><%= event.event_date.strftime("%d") %></p>
 					</h4>
