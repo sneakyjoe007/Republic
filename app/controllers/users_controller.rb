@@ -7,4 +7,5 @@ class UsersController < ApplicationController
 		@events = Event.all
 	end
 
+
 end

@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+#root page is organization is already logged in
+  devise_scope :organization do
+    authenticated :organization do
+      root 'organizations#profile', as: :authenticated_org
+    end
+  end
+
+  devise_scope :user do
+    authenticated :user do
+      root 'users#profile', as: :authenticated_root #root page for user already logged in
+    end
+
+    unauthenticated :user do
+      root 'devise/sessions#new', as: :unauthenticated_root #root page for new user not logged in (landing page)
+    end
+  end
 
   resources :categories
   resources :event_images
@@ -31,9 +47,6 @@ Rails.application.routes.draw do
     get 'categories' => 'admin#categories'
   end
 
-
-
-  root 'events#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

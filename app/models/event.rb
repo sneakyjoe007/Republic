@@ -1,20 +1,17 @@
 class Event < ActiveRecord::Base
+	include IceCube
+
 	resourcify
 	belongs_to :organization
 	belongs_to :category
-	belongs_to :event_image
 	has_many :volunteers, foreign_key: "event_id", dependent: :destroy
 
-	validates :event_date, presence: true
+	validates :start_date, presence: true
     validates :event_time, presence: true
     validates :name, :description, presence: true
     validates :volunteers_needed, numericality: { greater_than: 0 }
     validates :zip_code, numericality: { only_integer: true }
-
- #   scope :category_id, -> (category_id) {where category_id: category_id}
- #   scope :search, -> (query) { where("name like ?", "#{query}%")}
-#<li><%= f.association :category, as: :check_boxes, label: '', input_html: { class: 'checkbox' } %></li>
-
+    
     def self.search(query)
   		where("name like ?", "%#{query}%") 
 	end

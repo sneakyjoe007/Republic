@@ -17,6 +17,8 @@ class BaseController < ApplicationController
 			end
 		end
 
+		
+
 		def access_denied
 			flash[:alert] = "Access Denied"
       		redirect_to root_url and return

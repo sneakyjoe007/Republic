@@ -23,6 +23,7 @@ gem 'jquery-turbolinks'
 gem 'js-routes'
 gem 'maskedinput-rails'
 gem 'guidestar-ruby'
+gem 'recurring_select'
 
 
 group :production do

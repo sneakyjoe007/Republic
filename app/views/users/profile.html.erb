@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="row">
 	<div class="col-md-2">
 		<div class="profile-image">
@@ -15,16 +13,7 @@
 		<div class="double-size"><%= image_tag "rank.png" %></div>
 	</div>
 	<div class="col-md-9">
-		<strong>BADGES EARNED</strong>
-		<table>
-			<% @categories.each_slice(9) do |row| %>
-			<tr>
-				<% row.each do |category| %>
-				<td><div class="profile-category"><%= image_tag category.image.url(:thumb) %></div></td>
-				<% end %>
-			</tr>
-			<% end %>
-		</table>
+		
 	</div>
 </div>
 
@@ -51,22 +40,20 @@
 <br>
 
 <div class="row">
-	<div class="col-md-2">
-		<%= image_tag "calendar.gif" %>
+	<div class="col-md-3">
+		<div id="profiledatepicker"></div>
 	</div>
 
-	<div class="col-md-10">
+	<div class="col-md-7">
 
 		<% @events.each do |event| %>
 
 		<div class="panel panel-default">
 			<div class="panel-body">
-				<div class="col-md-1">
-					<h4 class="profile-date">
-						<p><%= event.event_date.strftime("%a") %></p>
-						<p><%= event.event_date.strftime("%^b") %></p>
-						<p><%= event.event_date.strftime("%d") %></p>
-					</h4>
+				<div class="col-md-2 back-fill profile-date">
+					<div class="month">	<%= event.event_date.strftime("%^b") %> </div>
+					<div class="date"> <%= event.event_date.strftime("%d") %> </div>
+					<div class="day"><%= event.event_date.strftime("%^a") %> </div>
 				</div>
 				<div class="col-md-8">
 					<div class="profile-event-header">
@@ -74,11 +61,11 @@
 						<span><%= link_to 'Enlist', profile_path %></span>
 						<span><%= link_to 'Recruit', profile_path %></span>
 					</div>
-					<p><%= truncate(event.description, :length => 180) %></p>
+					<div class="profile-description">
+						<%= truncate(event.description, :length => 180) %> <br>
+						<strong> 4 Animal Lovers Going </strong>
+					</div>
 				</div>
-
-				
-				
 			</div>
 		</div>
 		

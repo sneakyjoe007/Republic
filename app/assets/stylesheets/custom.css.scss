@@ -1,9 +1,8 @@
 @import "bootstrap";
 
 body {
-	background-color: #F5F5F1;
 	color: #333333;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
 	height: 100%;
 	width: 100%;
 }
@@ -199,22 +198,25 @@ a:active {
 }
 
 .profile-date {
-	display:block;
-	background-color: black;
-	border-radius: 5px;
 	text-align: center;
 	color: white;
-	height: 55px;
-	width: 55px;
-	top: 10px;
 }
 
-.profile-date > p {
-	font-weight: bold;
+.profile-date .month {
+	font-size: 15px;
+}
+
+.profile-date .date {
+	font-size: 30px;
+}
+
+.profile-date .day {
+	font-size: 15px;
 }
 
 .profile-event-header {
-	padding-top: 10px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
 }
 
 .profile-event-header > span {
@@ -233,4 +235,43 @@ a:active {
 
 .profile-event-header > span > a:visited {
 	color: #F5F5F1;
+}
+
+.profile-description {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.back-fill {
+	background-color: black;
+}
+
+.homepage-tagline {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	color: #d5181f;
+	font-size: 250%;
+	line-height: 120%;
+	padding-top: 1px;
+	padding-bottom: 2px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.homepage-line {
+	position: relative;
+	border-bottom: 1px solid black;
+}
+
+.homepage-body-text {
+
+	text-align: left;
+	margin-left: 0px;
+	padding-left: 0px;
+}
+
+.same-line > span {
+	display: inline-block;
+}
+
+#profiledatepicker > div > div.datepicker-days > table > tbody > tr:nth-child(n) > td.active.day {
+	background-color: black;
 }

@@ -14,4 +14,17 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) << :name
 
   end
+
+  def organization_login_required
+    if current_organization
+      return
+    else
+      access_denied
+    end
+  end
+
+  def access_denied
+      flash[:alert] = "Access Denied"
+      redirect_to root_url and return
+  end  
 end

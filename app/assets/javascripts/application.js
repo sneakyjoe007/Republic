@@ -19,6 +19,7 @@
 //= require moment
 //= require bootstrap-datepicker/core
 //= require bootstrap-datetimepicker
+//= require recurring_select
 //= require_tree .
 
 $(function () {

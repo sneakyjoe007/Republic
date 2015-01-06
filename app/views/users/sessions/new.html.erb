@@ -1,23 +1,57 @@
-<h2>Volunteer Sign in</h2>
+<div class="center">
+  <%= image_tag "index_logo.png" %>
+  <%= image_tag "index_republic.png" %>
+</div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
-  	<%= f.label :email %>
-  	<%= f.email_field :email, autofocus: true, class: "form-control" %>
- </div>
+<div class="homepage-tagline homepage-line">
+  UNITING FOR A BETTER TOMORROW
+</div>
 
-  <div class="form-group">
-  	<%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+<br>
+
+<div class="row">
+
+  <div class="col-md-1">
   </div>
 
-  <% if devise_mapping.rememberable? -%>
+  <div class="col-md-4">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-group">
-    	<%= f.check_box :remember_me %> <%= f.label :remember_me %>
+      <%= f.email_field :email, autofocus: true, placeholder: "EMAIL" %>
     </div>
-  <% end -%>
 
-  <div><%= f.submit "Sign in", class: "btn btn-primary" %></div>
-<% end %>
+    <div class="form-group same-line">
+      <span>
+        <%= f.password_field :password, autocomplete: "off", placeholder: "PASSWORD"%>
+        <%= f.submit "Sign in" %>
+      </span>
+    </div>
+      
+    <% end %>
+    <%= render "users/shared/links" %>
+    </div>
 
-<%= render "devise/shared/links" %>
+  <div class="col-md-5 homepage-body-text">
+    <p>If you are a corporation and would like to know how Republic can 
+    help your team achieve unity while becoming socialy responsible, 
+    click here.</p>
+  </div>
+
+  <div class="col-md-1 center">
+    <%= link_to image_tag("index_gear.png"), new_user_registration_path %>
+    <div>
+      enlist
+    </div>
+  </div>
+
+  <div class="col-md-1">
+  </div>
+</div>
+
+<div class="center">
+  <%= image_tag "index_image.jpg" %>
+</div>
+
+
+
+

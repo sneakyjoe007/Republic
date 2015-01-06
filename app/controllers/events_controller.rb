@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  before_action :authenticate_organization!, only: [:new, :edit, :update, :destroy]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   # GET /events
@@ -29,20 +30,11 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
-    if params[:image_id].present?
-      @event_images = EventImage.where("image_id = ?", params[:image_id])
-    else
-      @event_images = EventImage.all
-    end
   end
 
   # GET /events/1/edit
   def edit
-     if params[:image_id].present?
-      @event_images = EventImage.where("image_id = ?", params[:image_id])
-    else
-      @event_images = EventImage.all
-    end
+
   end
 
   # POST /events
@@ -101,7 +93,7 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :category_id, :description, :address, :event_date, :event_time, :zip_code, :city, :state, :image_id, :volunteers_needed, :volunteers_percentage)
+      params.require(:event).permit(:name, :category_id, :description, :address, :event_date, :event_time, :zip_code, :city, :state, :volunteers_needed, :volunteers_percentage)
     end
 
     def set_date_format

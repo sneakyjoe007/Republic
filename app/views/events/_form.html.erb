@@ -19,14 +19,6 @@
 
       <%= f.input :category_id, as: :select, collection: Category.all.order("name ASC"), include_blank: "Select a category...", input_html: { class: 'form-control' } %>
 
-      <div id="image_select">
-        <% @event_images.each do |event_image| %>
-        <div class="col-md-3">
-          <%= image_tag event_image.image.url(:thumb) %>
-        </div>
-        <% end %>
-      </div>
-
 
       <%= f.input :volunteers_needed, input_html: { class: 'form-control'} %> <br>
 
@@ -36,7 +28,9 @@
 
       <%= f.input :event_time, as: :string, input_html: { id: "timepicker", class: 'form-control', value: @event.event_time.blank? ? " " : @event.event_time.strftime("%l:%M %p") } %>
 
-
+      <%= f.input :address, input_html: { class: 'form-control' } %>
+      <%= f.input :city, input_html: { class: 'form-control' } %>
+      <%= f.input :state, input_html: { class: 'form-control' } %>
       <%= f.input :zip_code, input_html: { class: 'form-control' } %> <br>
       <%= f.submit class: "btn btn-primary" %>
   <% end %>

@@ -13,6 +13,7 @@
  *= require bootstrap
  *= require bootstrap-datepicker3
  *= require bootstrap-datetimepicker
+ *= require recurring_select
  *= require_tree .
  *= require_self
 
