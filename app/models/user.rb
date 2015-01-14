@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
    validates :name, presence: true
          
 	has_attached_file :image, :styles => { :medium => "200x", :thumb => "150x150" }, 
-      :default_url => "default.jpeg"
+      :default_url => "profile.gif"
 
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
