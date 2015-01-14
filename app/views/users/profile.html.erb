@@ -29,10 +29,9 @@
 		<div class="line">
 			<strong>NEWS FEED</strong>
 			<span>
-			<%= link_to 'PERSONAL', profile_path %>
-			<%= link_to 'CORPORATE', profile_path %>
-			<%= link_to 'FRIENDS', profile_path %>
 			<%= link_to 'ALL', profile_path %>
+			<%= link_to 'FRIENDS', profile_path, id: "friends", remote: true %>
+			<%= link_to 'MINE', profile_path, id: "mine", remote: true %>
 			</span>
 		</div>
 	</div>
@@ -41,10 +40,10 @@
 
 <div class="row">
 	<div class="col-md-3">
-		<div id="profiledatepicker"></div>
+		<div id="profiledatepicker" class="date" data-date-format="mm/dd/yyyy"></div>
 	</div>
 
-	<div class="col-md-7">
+	<div class="col-md-7" id="userEvents">
 
 		<% @events.each do |event| %>
 
@@ -58,12 +57,11 @@
 				<div class="col-md-8">
 					<div class="profile-event-header">
 						<%= event.category.name %>
-						<span><%= link_to 'Enlist', profile_path %></span>
-						<span><%= link_to 'Recruit', profile_path %></span>
+						<span><%= link_to "Enlist", {action: "create", controller: "volunteers", event_id: event.id}, method: :post, data: { no_turbolink: true} %></span>
 					</div>
 					<div class="profile-description">
 						<%= truncate(event.description, :length => 180) %> <br>
-						<strong> 4 Animal Lovers Going </strong>
+
 					</div>
 				</div>
 			</div>

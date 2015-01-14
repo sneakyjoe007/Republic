@@ -37,6 +37,9 @@ Rails.application.routes.draw do
 
   get 'pages/about'
   get 'pages/contact'
+  get 'users/events'
+  get 'users/friends'
+  get 'users/search'
   get 'event' => "events#show"
 
   get 'profile' => "users#profile"

@@ -27,7 +27,7 @@ class VolunteersController < ApplicationController
 
 	  	respond_to do |format|
 	      if @volunteer.save
-	        format.html { redirect_to root_url, notice: 'Joined Successfully' }
+	        format.html { redirect_to authenticated_root_url, notice: 'Joined Successfully' }
 	        format.json { render :show, status: :created, location: @volunteer }
 	      else
 	        format.html { render :new }
