@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 	def profile
 		@categories = Category.all
 		@events = Event.all.where("event_date >= ?", Date.today)
+		@users = User.where(id: current_user.id).first
 	end
 
 	def events

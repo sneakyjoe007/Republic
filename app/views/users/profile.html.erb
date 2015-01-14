@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-2">
-		<div class="profile-image">
-		<%= image_tag "profile.gif" %>
+		<div class="profile-image center">
+		<%= image_tag @users.image.url(:thumb) %>
 		</div>
 		
 	</div>
@@ -13,6 +13,8 @@
 		<div class="double-size"><%= image_tag "rank.png" %></div>
 	</div>
 	<div class="col-md-9">
+		<strong>BADGES EARNED</strong>
+		<%= image_tag "Badges.png" %>
 		
 	</div>
 </div>
