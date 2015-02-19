@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150105042439) do
+ActiveRecord::Schema.define(version: 20150219030556) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -39,6 +42,7 @@ ActiveRecord::Schema.define(version: 20150105042439) do
     t.integer  "volunteers_needed"
     t.integer  "volunteers_current"
     t.decimal  "volunteers_percentage", precision: 4, scale: 1
+    t.integer  "image_id"
     t.integer  "category_id"
     t.string   "repeats"
     t.date     "end_date"
@@ -107,6 +111,8 @@ ActiveRecord::Schema.define(version: 20150105042439) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

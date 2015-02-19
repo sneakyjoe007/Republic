@@ -29,7 +29,8 @@ Rails.application.routes.draw do
     resources :volunteers, only: [:new, :create]
   end
 
-  get 'organizations/profile' => "organizations#profile" 
+  get 'organizations/profile' => "organizations#profile"
+  get 'organizations/volunteers' 
   
   resources :organizations do
    get :guideStar, on: :collection
@@ -44,6 +45,7 @@ Rails.application.routes.draw do
 
   get 'profile' => "users#profile"
   get 'admin' => 'admin#index', :as => :admin
+  get '/:user_id', to: 'users#show', as: 'user'
 
   scope "/admin" do
     get 'dashboard' => 'admin#index', :as => :admin_dashboard

@@ -12,17 +12,13 @@
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><%= link_to 'About', pages_about_path %> </li>
-        <li><%= link_to 'Contact', pages_contact_path %> </li>
-      </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
             <% if current_user.has_role? :admin %>
               <li><%= link_to 'Admin Dashboard', admin_dashboard_path %></li>
             <% end %>
-            <li><%= link_to current_user.name, profile_path %> </li>
-            <li><%= link_to 'Edit Profile', edit_user_registration_path %> </li>
+            <li><%= link_to 'News Feed', profile_path %><li>
+            <li><%= link_to current_user.name, user_path(:user_id => current_user.id) %> </li>
             <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </li>
         <% elsif organization_signed_in? %>
           <li><%= link_to current_organization.name, organizations_profile_path %></li>

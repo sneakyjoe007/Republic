@@ -1,30 +1,70 @@
-<h2> Profile Page </h2>
-<%= link_to 'New Event', new_event_path, class: "btn btn-primary" %>
-<div class="center"> 
-	<h3><%= current_organization.name %></h3>
+<div class="row">
+	<div class="col-md-2">
+		<div class="center">
+		<%= image_tag @organization.image.url, :class => "profile-image" %>
+		</div>
+		
+	</div>
+
+	<div class="col-md-10 profile-byline">
+		The American Red Cross exists to provide....
+		
+	</div>
 </div>
+
+<br>
 
 <div class="row">
-	<div class="col-md-4">
-		<div class="thumbnail">
-			<%= image_tag "profile.gif" %>
+	<div class="col-md-2">
+		<div class="profile-name left">
+			<%= current_organization.name.upcase %>
 		</div>
 	</div>
-	<div class="col-md-8">
-		  <p> This is a placeholder for Profile Stuff </p>
+	<div class="col-md-10">
+		<div class="line">
+			<strong>NEWS FEED</strong>
+			<span class="red-text">
+			<%= link_to 'UPCOMING', organizations_profile_path %>
+			<%= link_to 'VOLUNTEERS', organizations_profile_path, id: "volunteers", remote: true  %>
+			<%= link_to 'NEW', '#' %>
+			</span>
+		</div>
 	</div>
 </div>
+<br>
 
-<table class="table table-striped table-bordered">
-	<tr>
-		<th class="center">Event Name</th>
-		<th class="center">Users Registered</th>
-	</tr>
+<div class="row">
+	<div class="col-md-3">
+		<div id="profiledatepicker" class="date" data-date-format="mm/dd/yyyy"></div>
+		<div class="red-button center">
+			<%= link_to 'Create New Event', new_event_path %>
+		</div>
+	</div>
 
-	<% @events.each do |event| %>
-	 <tr>
-	 	<td class="center"><%= link_to event.name, event %> </td>
-	 	<td class="center"><%= event.volunteers_current %></td>
-	 </tr>
-	<% end %>
-</table>
+	<div class="col-md-7" id="userEvents">
+
+		<% @events.each do |event| %>
+
+		<div class="panel panel-default">
+			<div class="panel-body" >
+				<div class="col-md-2 back-fill profile-date">
+					<div class="month">	<%= event.event_date.strftime("%^b") %> </div>
+					<div class="date"> <%= event.event_date.strftime("%d") %> </div>
+					<div class="day"><%= event.event_date.strftime("%^a") %> </div>
+				</div>
+				<div class="col-md-8">
+					<div class="profile-event-header">
+						<%= event.name %>
+					</div>
+					<div class="profile-description">
+						<%= truncate(event.description, :length => 180) %> <br>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<% end %>
+	</div>
+</div>

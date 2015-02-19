@@ -10,12 +10,11 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
   pool: 5
-  username: root
+  username: Owner
   password:
-  socket: /tmp/mysql.sock
 
 development:
   <<: *default
@@ -50,5 +49,5 @@ test:
 production:
   <<: *default
   database: republic_production
-  username: republic
+  username: Owner
   password: <%= ENV['REPUBLIC_DATABASE_PASSWORD'] %>

@@ -1,0 +1,27 @@
+<div id="userEvents">
+
+	<% @events.each do |event| %>
+		<% event.volunteers.each do |volunteer| %>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="col-md-2 ">
+						<%= image_tag volunteer.user.image.url(:thumb), :class => "test" %>
+					</div>
+					<div class="col-md-2 back-fill profile-date">
+						<div class="month">	<%= event.event_date.strftime("%^b") %> </div>
+						<div class="date"> <%= event.event_date.strftime("%d") %> </div>
+						<div class="day"><%= event.event_date.strftime("%^a") %> </div>
+					</div>
+					<div class="col-md-8">
+						<div class="profile-event-header">
+							<%= event.category.name %>
+						</div>
+						<div class="profile-description">
+							<%= truncate(event.description, :length => 180) %> <br>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+</div>

@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 	def profile
 		@categories = Category.all
 		@events = Event.all.where("event_date >= ?", Date.today)
-		@users = User.where(id: current_user.id).first
+		@user = User.where(id: current_user.id).first
 	end
 
 	def events
@@ -14,6 +14,10 @@ class UsersController < ApplicationController
 	def search
 		@events = Event.all.where("event_date = ?", params[:event_date])
 		render layout: false
+	end
+
+	def show
+		@user = User.find(params[:user_id])
 	end
 
 
